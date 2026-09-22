@@ -1,17 +1,17 @@
 * Sky130 buffer PEX netlist
-.subckt buffer INP OUT_BUFF VDD GND
-X0 OUT_BUFF a_280_160# GND GND sky130_fd_pr__nfet_01v8 ad=0.1455 pd=1.57 as=0.1455 ps=1.57 w=0.485 l=0.15
-X1 VDD a_280_160# OUT_BUFF VDD sky130_fd_pr__pfet_01v8 ad=0.222 pd=2.08 as=0.111 ps=1.04 w=0.74 l=0.15
-X2 OUT_BUFF a_280_160# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.111 pd=1.04 as=0.222 ps=2.08 w=0.74 l=0.15
+.subckt buffer INP OUT VDD GND
+X0 OUT a_280_160# GND GND sky130_fd_pr__nfet_01v8 ad=0.1455 pd=1.57 as=0.1455 ps=1.57 w=0.485 l=0.15
+X1 VDD a_280_160# OUT VDD sky130_fd_pr__pfet_01v8 ad=0.222 pd=2.08 as=0.111 ps=1.04 w=0.74 l=0.15
+X2 OUT a_280_160# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.111 pd=1.04 as=0.222 ps=2.08 w=0.74 l=0.15
 X3 a_280_160# INP VDD VDD sky130_fd_pr__pfet_01v8 ad=0.378 pd=3.12 as=0.378 ps=3.12 w=1.26 l=0.15
 X4 a_280_160# INP GND GND sky130_fd_pr__nfet_01v8 ad=0.126 pd=1.44 as=0.126 ps=1.44 w=0.42 l=0.15
-C0 OUT_BUFF a_280_160# 0.06164f
+C0 OUT a_280_160# 0.06164f
 C1 INP VDD 0.11491f
 C2 INP a_280_160# 0.05438f
-C3 OUT_BUFF INP 0
+C3 OUT INP 0
 C4 a_280_160# VDD 0.46865f
-C5 OUT_BUFF VDD 0.16013f
-C6 OUT_BUFF GND 0.26057f
+C5 OUT VDD 0.16013f
+C6 OUT GND 0.26057f
 C7 VDD GND 1.31683f
 C8 a_280_160# GND 0.10855f
 .ends buffer

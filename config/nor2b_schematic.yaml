@@ -1,29 +1,24 @@
 settings:
-  lib_name: nor2b_schematic
-  units:
-    time: ns
-    voltage: V
-    current: uA
-    pulling_resistance: kOhm
-    leakage_power: nW
-    capacitive_load: pF
-    energy: fJ
-  named_nodes:
-    - name: vdd
-      voltage: 1.8
-    - name: vss
-      voltage: 0.0
+  lib_name: nor2b_sky130_tt_1v80_025C_schematic
+  results_dir: output
+  temperature: 25
 
-includes:
-  - sky130A/libs.tech/ngspice/sky130.lib.spice tt
-  - cells/nor2b.spice
+  named_nodes:
+    primary_power:
+      name: vdd
+      voltage: 1.8
+    primary_ground:
+      name: vss
+      voltage: 0.0
 
 cells:
   nor2b:
-    pins:
-      inputs:
-        - a
-        - b
-      outputs:
-        - name: y
-          function: "(a & !b)"
+    netlist: "cells/nor2b.spice"
+    area: 109.9189
+    models:
+      - "config/mc_switches.spice"
+      - "sky130A/libs.tech/ngspice/sky130.lib.spice tt"
+    data_slews: [0.01, 0.05, 0.1, 0.2]
+    loads: [0.001, 0.005, 0.01, 0.05]
+    functions:
+      - "y = (a & !b)"

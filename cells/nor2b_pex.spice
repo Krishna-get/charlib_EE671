@@ -1,25 +1,42 @@
-settings:
-  lib_name: nor2b_pex
-  units:
-    time: ns
-    voltage: V
-    current: uA
-    pulling_resistance: kOhm
-    leakage_power: nW
-    capacitive_load: pF
-    energy: fJ
-  voltage: 1.8
-
-includes:
-  - sky130A/libs.tech/ngspice/sky130.lib.spice tt
-  - cells/nor2b_pex.spice
-
-cells:
-  nor2b:
-    pins:
-      inputs:
-        - a
-        - b
-      outputs:
-        - name: y
-          function: "(a & !b)"
+* NGSPICE file created from nor2b.ext - technology: sky130A
+.subckt nor2b a b vdd vss y
+X0 a_116_44# a vdd vdd sky130_fd_pr__pfet_01v8 ad=0.3765 pd=3.11 as=0.38366 ps=3.2116 w=1.255 l=0.15
+X1 vdd a_116_44# a_1746_302# vdd sky130_fd_pr__pfet_01v8 ad=0.3057 pd=2.55904 as=0.3 ps=2.6 w=1 l=0.15
+X2 vdd a_116_44# a_1746_302# vdd sky130_fd_pr__pfet_01v8 ad=0.3057 pd=2.55904 as=0.3 ps=2.6 w=1 l=0.15
+X3 a_116_44# a vss vss sky130_fd_pr__nfet_01v8 ad=0.126 pd=1.44 as=0.12693 ps=1.32114 w=0.42 l=0.15
+X4 y b a_1746_302# vdd sky130_fd_pr__pfet_01v8 ad=0.31042 pd=2.624 as=0.3 ps=2.6 w=1 l=0.15
+X5 a_116_44# a vss vss sky130_fd_pr__nfet_01v8 ad=0.126 pd=1.44 as=0.12693 ps=1.32114 w=0.42 l=0.15
+X6 y b a_1746_302# vdd sky130_fd_pr__pfet_01v8 ad=0.31042 pd=2.624 as=0.3 ps=2.6 w=1 l=0.15
+X7 y a_116_44# vss vss sky130_fd_pr__nfet_01v8 ad=0.18379 pd=1.78105 as=0.18133 ps=1.88734 w=0.6 l=0.15
+X8 y a_116_44# vss vss sky130_fd_pr__nfet_01v8 ad=0.18379 pd=1.78105 as=0.18133 ps=1.88734 w=0.6 l=0.15
+X9 y b a_1746_302# vdd sky130_fd_pr__pfet_01v8 ad=0.31042 pd=2.624 as=0.3 ps=2.6 w=1 l=0.15
+X10 y b a_1746_302# vdd sky130_fd_pr__pfet_01v8 ad=0.31042 pd=2.624 as=0.3 ps=2.6 w=1 l=0.15
+X11 vdd a_116_44# a_1746_302# vdd sky130_fd_pr__pfet_01v8 ad=0.3057 pd=2.55904 as=0.3 ps=2.6 w=1 l=0.15
+X12 a_116_44# a vss vss sky130_fd_pr__nfet_01v8 ad=0.126 pd=1.44 as=0.12693 ps=1.32114 w=0.42 l=0.15
+X13 a_116_44# a vdd vdd sky130_fd_pr__pfet_01v8 ad=0.3765 pd=3.11 as=0.38366 ps=3.2116 w=1.255 l=0.15
+X14 vdd a_116_44# a_1746_302# vdd sky130_fd_pr__pfet_01v8 ad=0.3057 pd=2.55904 as=0.3 ps=2.6 w=1 l=0.15
+X15 y b a_1746_302# vdd sky130_fd_pr__pfet_01v8 ad=0.31042 pd=2.624 as=0.3 ps=2.6 w=1 l=0.15
+X16 vss b y vss sky130_fd_pr__nfet_01v8 ad=0.21155 pd=2.2019 as=0.21442 ps=2.07789 w=0.7 l=0.15
+X17 vdd a_116_44# a_1746_302# vdd sky130_fd_pr__pfet_01v8 ad=0.3057 pd=2.55904 as=0.3 ps=2.6 w=1 l=0.15
+X18 a_116_44# a vdd vdd sky130_fd_pr__pfet_01v8 ad=0.3765 pd=3.11 as=0.38366 ps=3.2116 w=1.255 l=0.15
+C0 b vdd 0.72649f
+C1 a_116_44# vdd 2.02415f
+C2 y vdd 0.51095f
+C3 a_1746_302# vdd 2.73663f
+C4 a_116_44# b 0.00957f
+C5 a vdd 0.47956f
+C6 y b 0.38548f
+C7 a_1746_302# b 0.11896f
+C8 y a_116_44# 0.14199f
+C9 a_116_44# a_1746_302# 0.14575f
+C10 y a_1746_302# 1.1427f
+C11 a a_116_44# 0.20739f
+C12 y a 0
+C13 a a_1746_302# 0
+C14 y vss 2.71217f
+C15 b vss 1.35101f
+C16 a vss 0.75685f
+C17 vdd vss 8.45433f
+C18 a_1746_302# vss 0.51612f
+C19 a_116_44# vss 2.61355f
+.ends

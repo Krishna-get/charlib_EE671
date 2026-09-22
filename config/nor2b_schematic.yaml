@@ -5,10 +5,10 @@ settings:
 
   named_nodes:
     primary_power:
-      name: vdd
+      name: VDD
       voltage: 1.8
     primary_ground:
-      name: vss
+      name: VSS
       voltage: 0.0
 
 cells:
@@ -21,4 +21,4 @@ cells:
     data_slews: [0.01, 0.05, 0.1, 0.2]
     loads: [0.001, 0.005, 0.01, 0.05]
     functions:
-      - "y = (a & !b)"
+      - "Y = (A & !B)"

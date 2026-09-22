@@ -1,0 +1,17 @@
+* Sky130 buffer PEX netlist
+.subckt buffer inp out_buff VDD GND
+X0 out_buff a_280_160# GND GND sky130_fd_pr__nfet_01v8 ad=0.1455 pd=1.57 as=0.1455 ps=1.57 w=0.485 l=0.15
+X1 VDD a_280_160# out_buff VDD sky130_fd_pr__pfet_01v8 ad=0.222 pd=2.08 as=0.111 ps=1.04 w=0.74 l=0.15
+X2 out_buff a_280_160# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.111 pd=1.04 as=0.222 ps=2.08 w=0.74 l=0.15
+X3 a_280_160# inp VDD VDD sky130_fd_pr__pfet_01v8 ad=0.378 pd=3.12 as=0.378 ps=3.12 w=1.26 l=0.15
+X4 a_280_160# inp GND GND sky130_fd_pr__nfet_01v8 ad=0.126 pd=1.44 as=0.126 ps=1.44 w=0.42 l=0.15
+C0 out_buff a_280_160# 0.06164f
+C1 inp VDD 0.11491f
+C2 inp a_280_160# 0.05438f
+C3 out_buff inp 0
+C4 a_280_160# VDD 0.46865f
+C5 out_buff VDD 0.16013f
+C6 out_buff GND 0.26057f
+C7 VDD GND 1.31683f
+C8 a_280_160# GND 0.10855f
+.ends buffer

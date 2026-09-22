@@ -9,11 +9,9 @@ settings:
     capacitive_load: pF
     energy: fJ
   named_nodes:
-    vdd:
-      name: vdd
+    - name: vdd
       voltage: 1.8
-    vss:
-      name: vss
+    - name: vss
       voltage: 0.0
 
 includes:
@@ -27,5 +25,5 @@ cells:
         - a
         - b
       outputs:
-        - y
-    function: "(a & !b)"
+        - name: y
+          function: "(a & !b)"
